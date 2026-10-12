@@ -1,0 +1,224 @@
+/* Ultra-Premium Luxury Jewellery CSS Design System */
+/* Palette: 50% Deep Teal (#123D4B) · 30% Pearl White (#F5F3EE) · 15% Gold (#C5A64A) · 5% Charcoal (#202326) · Silver (#D7D9D7) */
+
+:root {
+  /* 50% Deep Teal Imperial Jewel Palette */
+  --primary-teal: #123D4B;
+  --primary-teal-dark: #0A232C;
+  --primary-teal-light: #1A5365;
+  --primary-teal-hover: #1E5E73;
+  --teal-gradient: linear-gradient(145deg, #123D4B 0%, #0A232C 100%);
+  --teal-glow-gradient: linear-gradient(135deg, #1A5365 0%, #123D4B 50%, #0A232C 100%);
+  --teal-dark-gradient: linear-gradient(135deg, #0E2A34 0%, #07171D 100%);
+  
+  /* Backward-compatibility aliases for burgundy components */
+  --primary-burgundy: #123D4B;
+  --primary-burgundy-dark: #0A232C;
+  --primary-burgundy-light: #1A5365;
+  --burgundy-gradient: linear-gradient(145deg, #123D4B 0%, #0A232C 100%);
+  --dark-velvet-gradient: linear-gradient(135deg, #0A232C 0%, #06151B 100%);
+
+  /* 15% Metallic Champagne & Antique Gold Tokens */
+  --gold-accent: #C5A64A;
+  --gold-accent-hover: #D8BC62;
+  --gold-accent-dark: #9E802A;
+  --gold-light: #FAF5E8;
+  --gold-light-border: rgba(197, 166, 74, 0.4);
+  --border-gold: rgba(197, 166, 74, 0.35);
+  --shadow-gold: 0 8px 28px rgba(197, 166, 74, 0.35);
+  --shadow-metallic: 0 0 22px rgba(197, 166, 74, 0.28);
+  --text-gold: #C5A64A;
+
+  /* Premium Metallic Gradients */
+  --gold-gradient: linear-gradient(135deg, #A88630 0%, #F3E4A8 25%, #C5A64A 50%, #F5E8B9 75%, #9E7D28 100%);
+  --gold-foil-gradient: linear-gradient(90deg, #C5A64A, #F5E8B9, #C5A64A);
+
+  /* 30% Pearl White & Alabaster Silk Surfaces */
+  --bg-cream: #F5F3EE;
+  --bg-pearl: #F5F3EE;
+  --bg-warm: #EBE8E0;
+  --bg-card: #FFFFFF;
+  --bg-card-subtle: #FAF9F6;
+
+  /* 5% Charcoal Text & Contrast Accents */
+  --charcoal-dark: #202326;
+  --charcoal-deep: #15181A;
+  --text-dark: #202326;
+  --text-muted: #596066;
+  --text-light: #FFFFFF;
+
+  /* Soft Platinum Silver (#D7D9D7) */
+  --border-silver: #D7D9D7;
+  --border-light: #D7D9D7;
+  --border-subtle: rgba(215, 217, 215, 0.7);
+
+  /* Shadows tuned to Deep Teal & Charcoal */
+  --shadow-sm: 0 4px 14px rgba(18, 61, 75, 0.05);
+  --shadow-md: 0 10px 28px rgba(18, 61, 75, 0.09);
+  --shadow-lg: 0 20px 50px rgba(18, 61, 75, 0.16);
+  --shadow-charcoal: 0 14px 40px rgba(32, 35, 38, 0.25);
+
+  /* Typography */
+  --font-heading: 'Cinzel', 'Cormorant Garamond', Georgia, serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Radii & Transitions */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+  --transition-fast: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: all 0.38s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-pearl);
+  color: var(--text-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Typography Headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  color: var(--primary-teal);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+}
+
+/* Custom Metallic Gold & Deep Teal Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-pearl);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #C5A64A 0%, #9E802A 100%);
+  border-radius: 4px;
+  border: 1px solid #F5E8B9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-teal);
+}
+
+/* Utility Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmerGleam {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes pulseGoldGlow {
+  0%, 100% { box-shadow: 0 0 12px rgba(197, 166, 74, 0.3); }
+  50% { box-shadow: 0 0 30px rgba(197, 166, 74, 0.75); }
+}
+
+.gold-gradient-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+
+.gold-badge {
+  background: linear-gradient(135deg, #FAF5E8 0%, #F5E8B9 100%);
+  color: #7A5F18;
+  border: 1px solid var(--gold-accent);
+  padding: 4px 12px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 2px 6px rgba(197, 166, 74, 0.15);
+}
+
+.teal-btn, .burgundy-btn {
+  background: var(--teal-gradient);
+  color: var(--text-light);
+  border: 1px solid rgba(197, 166, 74, 0.45);
+  padding: 12px 26px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px rgba(18, 61, 75, 0.28);
+}
+
+.teal-btn:hover, .burgundy-btn:hover {
+  background: linear-gradient(145deg, #1A5365 0%, #0A232C 100%);
+  border-color: var(--gold-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(18, 61, 75, 0.38), var(--shadow-metallic);
+}
+
+.gold-outline-btn {
+  border: 1.5px solid var(--gold-accent);
+  color: var(--primary-teal);
+  background: rgba(197, 166, 74, 0.08);
+  padding: 10px 24px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.gold-outline-btn:hover {
+  background: var(--gold-accent);
+  color: var(--charcoal-dark);
+  font-weight: 700;
+  border-color: var(--gold-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-gold);
+}
